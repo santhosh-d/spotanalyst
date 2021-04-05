@@ -54,7 +54,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,client_secret
 
 
 
-Getting top tracks of the user
+# Getting top tracks of the user
 # top_tracks=sp.current_user_top_tracks(limit=20, offset=0, time_range='long_term')
 # with open(os.path.join(final_extract,'top_tracks_long.json'),'w') as current_song_output:
 #     json.dump(top_tracks, current_song_output)
