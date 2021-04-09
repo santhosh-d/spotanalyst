@@ -1,0 +1,6 @@
+final_data
+spotify_data
+.cache
+.env
+demo
+*.log
