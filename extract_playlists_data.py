@@ -66,7 +66,7 @@ def get_tracks_from_playlists(username, sp):
     trackList = []
     for playlist in playlists['items']:
         if playlist['owner']['id'] == username:
-            print (playlist['name'],' no. of tracks: ',playlist['tracks']['total'])
+            # print (playlist['name'],' no. of tracks: ',playlist['tracks']['total'])
             results = sp.user_playlist(username, playlist['id'],fields="tracks,next")
             tracks = results['tracks']
             for i, item in enumerate(tracks['items']):
