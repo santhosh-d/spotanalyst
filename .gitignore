@@ -4,3 +4,4 @@ spotify_data
 .env
 demo
 *.log
+node_modules
