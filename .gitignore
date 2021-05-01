@@ -5,3 +5,4 @@ spotify_data
 demo
 *.log
 node_modules
+.ipynb_checkpoints
