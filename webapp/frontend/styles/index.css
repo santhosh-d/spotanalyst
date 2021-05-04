@@ -446,6 +446,10 @@ nav.scroll .nav-list {
   bottom: 0%;
 }
 
+.social {
+  width: 5%;
+}
+
 .social ul {
   display: block;
   list-style: none;
