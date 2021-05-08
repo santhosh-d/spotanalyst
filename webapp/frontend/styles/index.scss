@@ -20,7 +20,9 @@ $bgcolor: #FFF8DC;
 // $tertiarycolor: $tertiarycolor-dark;
 // $bgcolor: black;
 // $commoncolor-dark: $tertiarycolor;
-
+::selection{
+    background: $primarycolor;
+}
 $titletxt:7rem;
 $secondarytxt: 3rem;
 $descriptiontxt: 1.5rem;
@@ -362,7 +364,6 @@ nav.scroll{ //navbar's div
     justify-content: center;
     display: flex;
 }
-
 .about
 {
     position: relative;

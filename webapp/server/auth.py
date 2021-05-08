@@ -29,26 +29,29 @@ spotify_data='.\\spotify_data\\vijayasai\\'
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,client_secret=client_secret,
                                                 redirect_uri=redirect_uri, scope=scope))
 
-#Prints the Current User's Details
+# # Prints the Current User's Details
 # user=sp.current_user()
 # print(json.dumps(user,indent=2))
 
 #Gets Current Song played by the user
 
-# current_song=sp.current_user_playing_track()
-# print(current_song)
-# if(current_song==None):
-#     print("No Song is Playing Right Now! Please check your Spotify Again!!")
-# else:
-#     with open(os.path.join(final_extract,'current_song.json'),'w') as current_song_output:
-#         json.dump(current_song,current_song_output)
-#     print("Name of Current Song: "+current_song['item']['name']+
-#         "\nURI of the Song: "+current_song['item']['uri'])
-#     uri_current_song = current_song['item']['uri']
-#     audio_analysis= sp.audio_features(tracks=uri_current_song)
-#     with open(os.path.join(final_extract,'current_song_analysis.json'),'w') as current_song_output:
-#         json.dump(audio_analysis,current_song_output)
-#     print("Audio Analysis for current song extracted successfully")
+current_song=sp.current_user_playing_track()
+print(current_song)
+if(current_song==None):
+    print("No Song is Playing Right Now! Please check your Spotify Again!!")
+else:
+    with open('current_song.json','w') as current_song_output:
+        json.dump(current_song,current_song_output)
+    print("Name of Current Song: "+current_song['item']['name']+
+        "\nURI of the Song: "+current_song['item']['uri'])
+    uri_current_song = current_song['item']['uri']
+    audio_analysis= sp.audio_features(tracks=uri_current_song)
+    # with open(os.path.join(final_extract,'current_song_analysis.json'),'w') as current_song_output:
+    #     json.dump(audio_analysis,current_song_output)
+    # print("Audio Analysis for current song extracted successfully")
+
+current_song_cover=current_song["item"]["album"]["images"][0]["url"]
+print(current_song_cover)
 
 
 
@@ -67,10 +70,10 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,client_secret
 
 
 
-results = sp.current_user_saved_tracks()
-for idx, item in enumerate(results['items']):
-    track = item['track']
-    print(idx, track['artists'][0]['name'], " – ", track['name']," - ", track['id'])
+# results = sp.current_user_saved_tracks()
+# for idx, item in enumerate(results['items']):
+#     track = item['track']
+#     print(idx, track['artists'][0]['name'], " – ", track['name']," - ", track['id'])
 # list_playlists=sp.current_user_playlists(limit=50, offset=0)
 # print(json.dumps(list_playlists,indent=4))
 
